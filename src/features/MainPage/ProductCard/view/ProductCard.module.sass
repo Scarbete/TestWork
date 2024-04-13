@@ -1,0 +1,49 @@
+
+@mixin createEllipsisText($height)
+    height: $height
+    overflow: hidden
+    text-overflow: ellipsis
+
+.productCard
+    border-radius: var(--spacing-15)
+    width: 301px
+    height: 812px
+    background: white
+    margin: 20px
+    padding: 8px 10px
+    position: relative
+
+    .imageBox
+        width: 281px
+        height: 366px
+        overflow: hidden
+        border-radius: var(--spacing-15)
+        border: 1px solid black
+
+        img
+            object-fit: cover
+            transition: 350ms
+
+    .name
+        margin: 8px 0
+        font-size: 36px
+        line-height: 43px
+        white-space: nowrap
+        @include createEllipsisText(40px)
+
+    .description
+        font-size: 24px
+        line-height: 29px
+        @include createEllipsisText(226px)
+
+    .quantityController
+        position: absolute
+        bottom: 8px
+        right: 10px
+        left: 10px
+
+    &:hover
+        .imageBox
+            img
+                transform: scale(1.03)
+                transition: 350ms

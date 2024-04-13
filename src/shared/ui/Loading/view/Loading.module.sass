@@ -1,0 +1,78 @@
+
+.loading
+    width: 100%
+    height: 350px
+    display: flex
+    justify-content: center
+    align-items: center
+
+.main
+    display: flex
+    padding: 1.5em
+    gap: 3em
+    flex-wrap: wrap
+    justify-content: center
+    margin: auto
+
+.loadingBlock
+    display: block
+    width: 16em
+    height: 16em
+
+    &__child, &__Box
+        animation: loadingAnimation 1.5s cubic-bezier(0.65,0,0.35,1) infinite
+        transform-origin: 20px 128px
+
+    &__child
+        animation-name: loadTransition
+
+    &__Box:first-child, &__Box:first-child &__child
+        animation-delay: -0.25s
+
+    &__Box:nth-child(2), &__Box:nth-child(2) &__child
+        animation-delay: -0.125s
+
+    &__Box:nth-child(2) &__child
+        transform-origin: 64px 128px
+
+    &__Box:nth-child(3) &__child
+        transform-origin: 108px 128px
+
+
+@media (prefers-color-scheme: dark)
+    .root
+        --bg: hsl(var(--hue),90%,10%)
+        --fg: hsl(var(--hue),90%,90%)
+
+
+@keyframes loadingAnimation
+    from,
+    25%,
+    66.67%,
+    to
+        transform: translateY(0)
+
+    50%
+        animation-timing-function: cubic-bezier(0.33,0,0.67,0)
+        transform: translateY(-80px)
+
+
+@keyframes loadTransition
+    from,
+    to
+        animation-timing-function: cubic-bezier(0.33,0,0.67,0)
+        width: 40px
+        height: 24px
+        transform: rotate(180deg) translateX(0)
+
+    33.33%
+        animation-timing-function: cubic-bezier(0.33,1,0.67,1)
+        width: 20px
+        height: 64px
+        transform: rotate(180deg) translateX(10px)
+
+    66.67%
+        animation-timing-function: cubic-bezier(0.33,1,0.67,1)
+        width: 28px
+        height: 44px
+        transform: rotate(180deg) translateX(6px)

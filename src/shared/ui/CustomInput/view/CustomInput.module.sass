@@ -1,0 +1,26 @@
+
+.label
+    border-radius: var(--spacing-15)
+
+    .field
+        width: fit-content
+        height: 68px
+        font-size: 36px
+        line-height: 43px
+        padding: 0 16px
+        background: var(--root-second-black-color)
+        border-radius: var(--spacing-15)
+        color: var(--root-white-color)
+
+        &::placeholder
+            color: var(--root-white-color)
+
+        &[type="number"]::-webkit-inner-spin-button, &[type="number"]::-webkit-outer-spin-button
+            -webkit-appearance: none
+            margin: 0
+
+.error
+    border: 2px solid red
+
+    input::placeholder
+        color: red !important

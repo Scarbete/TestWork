@@ -1,0 +1,73 @@
+
+.shoppingCartBox
+    margin: 243px 0 0
+
+    @media (max-width: 800px)
+        margin: 243px 20px 0
+
+    @media (max-width: 660px)
+        margin: 140px 20px 0
+
+    .container
+        display: flex
+        justify-content: center
+        align-items: center
+
+        .shoppingCart
+            max-width: 708px
+            min-height: 230px
+            padding: 10px 13px
+            border-radius: var(--spacing-15)
+            background: var(--root-second-white-color)
+
+            .title
+                font-size: 36px
+                line-height: 43px
+                margin: 20px 0
+
+            .clearBasketButton
+                @media (max-width: 740px)
+                    width: 100%
+
+                @media (max-width: 510px)
+                    height: fit-content
+                    padding: 12px 0
+
+                @media (max-width: 480px)
+                    font-size: 26px
+
+            .orderForm
+                display: flex
+                justify-content: space-between
+                align-items: center
+                gap: 20px
+
+                @media (max-width: 740px)
+                    display: flex
+                    flex-direction: column
+                    gap: 10px
+
+                    .inputClass, button
+                        width: 100%
+
+                .inputClass
+                    width: 401px
+                    height: 68px
+                    border-radius: var(--spacing-15)
+                    padding: 0 16px
+                    background: var(--root-second-black-color)
+                    font-size: 36px
+                    line-height: 43px
+                    color: var(--root-white-color)
+                    border: 3px solid var(--root-second-black-color)
+
+                    @media (max-width: 480px)
+                        width: 100%
+                        font-size: 26px
+
+                    &__Error
+                        border: 3px solid var(--root-error-color)
+                        color: var(--root-error-color)
+
+                        &::placeholder
+                            color: var(--root-error-color)

@@ -1,0 +1,93 @@
+
+.background
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    background-color: rgba($color: #000000, $alpha: .7)
+
+    opacity: 0
+    transition: .3s all
+
+    &.closed
+        opacity: 0
+        z-index: -1
+        display: none
+
+
+    &.open
+        opacity: 1
+        z-index: 99
+
+
+.wrapper
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    background-color: var(--root-white-color)
+    padding: 10px
+    border-radius: 8px
+    position: fixed
+    z-index: 100
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    max-height: 95vh
+    overflow: auto
+    transition: 250ms
+
+    &.closed
+        z-index: -1
+        animation: close .3s
+        opacity: 0
+        display: none
+
+
+    &.open
+        opacity: 1
+        z-index: 100
+        animation: show .3s
+
+
+    .close
+        position: absolute
+        right: 10px
+        top: 10px
+        cursor: pointer
+
+
+    .noClose
+        display: none
+
+
+    .content
+        padding: 10px 15px
+        width: 100%
+        height: 100%
+
+        .title
+            display: flex
+            align-items: center
+            justify-content: center
+            text-align: center
+
+@keyframes show
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+
+@keyframes close
+    0%
+        opacity: 1
+    100%
+        opacity: 0
+
+
+@media(max-width: 768px)
+
+.wrapper
+    .content
+        padding: 0
